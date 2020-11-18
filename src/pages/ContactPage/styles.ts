@@ -8,7 +8,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  min-height: 660px;
   overflow-y: auto;
   overflow-x: hidden;
 `;
