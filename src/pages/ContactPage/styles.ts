@@ -10,6 +10,17 @@ export const Container = styled.div`
 
   overflow-y: auto;
   overflow-x: hidden;
+
+  animation: smooth-appearance 0.7s ease;
+
+  @keyframes smooth-appearance {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Content = styled.div`

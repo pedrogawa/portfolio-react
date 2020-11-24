@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
@@ -15,7 +16,13 @@ import {
 } from './styles';
 
 const LandingPage: React.FC = () => {
+  const history = useHistory();
+
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
+  const handleNavigateToProjects = useCallback(() => {
+    history.push('/projects');
+  }, [history]);
 
   const handleOnMenuToggle = useCallback(() => {
     setIsSidebarVisible(oldState => !oldState);
@@ -39,7 +46,7 @@ const LandingPage: React.FC = () => {
                 product manufacturing, and graphic design (and a whole lot
                 more).
               </Description>
-              <Button>SAIBA MAIS</Button>
+              <Button onClick={handleNavigateToProjects}>SAIBA MAIS</Button>
             </div>
           </Left>
         </Main>

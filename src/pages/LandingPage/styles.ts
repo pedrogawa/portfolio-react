@@ -10,6 +10,17 @@ export const Container = styled.div`
   min-width: 100vw;
 
   min-height: 900px;
+
+  animation: smooth-appearance 0.7s ease;
+
+  @keyframes smooth-appearance {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Main = styled.main`

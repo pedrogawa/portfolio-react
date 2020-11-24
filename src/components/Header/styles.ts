@@ -44,26 +44,28 @@ export const Name = styled.div`
   display: flex;
   align-items: center;
 
+  cursor: pointer;
   img {
-    height: 30px;
     width: 30px;
-
+    height: 30px;
+    transition: transform 0.4s ease-out;
     @media (max-width: 430px) {
       display: none;
     }
   }
-
   strong {
     color: #574e65;
     font-size: 28px;
-    font-weight: 500;
-
     @media (min-width: 431px) {
       margin-left: 16px;
     }
-
     @media (max-width: 800px) {
       font-size: 20px;
+    }
+  }
+  &:hover {
+    img {
+      transform: rotateX(180deg) rotateY(180deg);
     }
   }
 `;
@@ -94,14 +96,36 @@ export const Page = styled.button<IPageProps>`
     selected
       ? css`
           color: #78d0d3;
-          border-bottom: solid 2px #78d0d3;
         `
       : css`
           color: ${isBlack ? '#1b1c1e' : '#fff'};
-          border-bottom: solid 2px transparent;
 
           @media (max-width: 960px) {
             color: #1b1c1e;
           }
         `}
+
+  div {
+    margin-top: 8px;
+
+    width: 0;
+    height: 3px;
+    background: #78d0d3;
+
+    ${({ selected }) =>
+      selected &&
+      css`
+        width: 100%;
+        animation: smooth-width 0.6s;
+
+        @keyframes smooth-width {
+          0% {
+            width: 0;
+          }
+          100% {
+            width: 100%;
+          }
+        }
+      `}
+  }
 `;

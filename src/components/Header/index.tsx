@@ -30,7 +30,7 @@ const Header: React.FC<IHeaderProps> = ({
   );
   return (
     <Container fixed={fixed}>
-      <Name>
+      <Name onClick={() => handleNavigateTo('/')}>
         <img src={logo} alt="" />
         <strong>Pedro Ferreira</strong>
       </Name>
@@ -40,21 +40,24 @@ const Header: React.FC<IHeaderProps> = ({
           selected={selectedPage === 'LANDING'}
           onClick={() => handleNavigateTo('/')}
         >
-          Início
+          <span>Inicio</span>
+          <div />
         </Page>
         <Page
           isBlack={color === 'BLACK'}
           selected={selectedPage === 'PROJECTS'}
           onClick={() => handleNavigateTo('/projects')}
         >
-          Projetos
+          <span>Projetos</span>
+          <div />
         </Page>
         <Page
           isBlack={color === 'BLACK'}
           selected={selectedPage === 'CONTACT'}
           onClick={() => handleNavigateTo('/contact')}
         >
-          Contato
+          <span>Contato</span>
+          <div />
         </Page>
       </Pages>
       <FiMenu size={24} onClick={onMenuShown} />
